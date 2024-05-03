@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'task_create' %}">
+    {% csrf_token %}
+    <label for="description">Описание:</label>
+    <textarea name="description" required></textarea>
+    <br>
+    <br>
+    <label for="status">Статус:</label>
+    <select name="status" required>
+        {% for stat in status %}
+            <option value="{{ stat.0 }}">{{ stat.1 }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <label for="date_done">Время завершения:</label>
+    <input type="text" name="date_done" placeholder="YYYY-MM-DD">
+    <br>
+    <br>
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>
