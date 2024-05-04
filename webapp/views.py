@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -23,8 +23,13 @@ def task_create(request):
             date_done = None
         Tasks.objects.create(
             description=request.POST.get('description'),
+            super_description=request.POST.get('super_description'),
             status=request.POST.get('status'),
             date_done=date_done
         )
         return HttpResponseRedirect('/task_page')
 
+
+def detail_view(request, *args, pk, **kwargs):
+    task = get_object_or_404(Tasks, pk=pk)
+    return render(request, 'detail_view.html', {'task': task})

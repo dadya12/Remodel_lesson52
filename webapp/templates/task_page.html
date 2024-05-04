@@ -17,6 +17,7 @@
                 <h5 class="card-title">{{ task.description }}</h5>
                 <p class="card-text">{{ task.date_done }}</p>
                 <a href="{% url 'task_create' %}" style="text-decoration: none; color: white">Добавить новую задачу</a>
+                <a href="{% url 'detail_view' task.pk %}" style="text-decoration: none; color: white">Подробнее...</a>
             </div>
         </div>
     </div>
