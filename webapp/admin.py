@@ -9,4 +9,4 @@ class TasksAdmin(admin.ModelAdmin):
     list_display = ['id', 'description', 'status', 'date_done']
     list_filter = ['status']
     search_fields = ['status', 'id']
-    fields = ['description', 'status', 'date_done']
+    fields = ['description', 'super_description', 'status', 'date_done']

@@ -1,0 +1,60 @@
+[
+{
+  "model": "webapp.tasks",
+  "pk": 1,
+  "fields": {
+    "description": "Calam alekum",
+    "super_description": "calam tolko popolam nafig",
+    "status": "new",
+    "date_done": "2024-05-03"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 2,
+  "fields": {
+    "description": "No salam alekum",
+    "super_description": "esli no to salam no no no",
+    "status": "in_progress",
+    "date_done": "2024-05-04"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 3,
+  "fields": {
+    "description": "Poshel delat dz",
+    "super_description": null,
+    "status": "done",
+    "date_done": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 4,
+  "fields": {
+    "description": "Салам по полам",
+    "super_description": null,
+    "status": "new",
+    "date_done": null
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$jFXyCLlp5E57KitjPCAWCC$egoVOWVidNcSplQN2UnJ3Pb5ICFt5Gh5zSOtH15cZrQ=",
+    "last_login": "2024-05-03T16:35:36.749Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-03T16:19:23.851Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
