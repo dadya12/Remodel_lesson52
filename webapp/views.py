@@ -33,3 +33,12 @@ def task_create(request):
 def detail_view(request, *args, pk, **kwargs):
     task = get_object_or_404(Tasks, pk=pk)
     return render(request, 'detail_view.html', {'task': task})
+
+
+def delete_task(request, pk):
+    task = get_object_or_404(Tasks, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'delete_task.html', {'task': task})
+    elif request.method == "POST":
+        task.delete()
+        return redirect('task_page')

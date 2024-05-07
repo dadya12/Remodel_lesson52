@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block navbar %}
+    <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
+    <a class="navbar-brand" href="{% url 'task_page' %}">Task Page</a>
+    <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
+    
+{% endblock %}
+
+{% block h1 %}<h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Вы уверены?</h1>{% endblock %}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да</button>
+    </form>
+    <a href="{% url 'task_page' %}" class="btn btn-success" role="button">Нет</a>
+{% endblock %}

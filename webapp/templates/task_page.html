@@ -3,11 +3,14 @@
 {% block title %}Tasks{% endblock %}
 
 {% block navbar %}
+    <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
     <a class="navbar-brand" href="{% url 'task_create' %}">Create Task</a>
+    <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
 {% endblock %}
 
+{% block h1 %}<h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Вaши задачи:</h1>{% endblock %}
+
 {% block content %}
-    <h1>Вaши задачи:</h1>
     {% for task in tasks %}
         <div class="container">
             <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
@@ -15,7 +18,10 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ task.description }}</h5>
                     <p class="card-text">{{ task.date_done }}</p>
-                    <a href="{% url 'detail_view' task.pk %}" style="text-decoration: none; color: white">Подробнее...</a>
+                    <a href="{% url 'detail_view' task.pk %}"
+                       style="text-decoration: none; color: white">Подробнее...</a>
+                    <a href="{% url 'delete_task' task.pk %}"
+                       style="text-decoration: none; color: white; margin-left: 40px">Удалить</a>
                 </div>
             </div>
         </div>

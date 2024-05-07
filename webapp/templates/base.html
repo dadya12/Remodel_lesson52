@@ -23,7 +23,9 @@
   </div>
 </nav>
 
-<div class="container">
+{% block h1 %}{% endblock %}
+
+<div class="container" style="display: flex; justify-content: space-between">
 {% block content %}
 {% endblock %}
 </div>
