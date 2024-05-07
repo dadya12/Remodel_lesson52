@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Create Task{% endblock %}
-
 {% block navbar %}
     <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
     <a class="navbar-brand" href="{% url 'task_page' %}">Task Page</a>
     <span style="color: white; margin-top: 5px; margin-right: 16px">|</span>
-    
 {% endblock %}
 
-{% block h1 %}<h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Создайте задачу:</h1>{% endblock %}
+    <title>{% block title %}Update Task{% endblock %}</title>
+
+{% block h1 %}<h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Обновите задачу:</h1>{% endblock %}
 
 {% block content %}
-<form method="post" action="{% url 'task_create' %}">
-    {% include 'partial/task_form.html' with value_submit='Добавить' %}
+<form method="post">
+    {% include 'partial/task_form.html' with value_submit='Изменить' %}
 </form>
 {% endblock %}
